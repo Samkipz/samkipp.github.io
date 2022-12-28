@@ -1,0 +1,80 @@
+
+.card-section{
+    display: flex;
+    flex-flow: column;
+    & .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        background-color: $backgroundWhite;
+        & h2{
+            color: white;
+        }
+        & .image {
+            width: 80%;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            height: auto;
+        }
+    }
+    & .card1{
+        background-color: $backgroundBlack;
+    }
+    & .card2{
+        & .overlay {
+            @include card-overlay(rgba(156, 16, 16, 0.874));
+        }
+    }
+    & .card2:hover{
+        & .overlay{
+            opacity: 1;
+        }
+        & .card-bottom-text{
+            transition: .5s ease;
+            opacity: 0;
+        }
+    }
+    & .card3{
+        margin: 0 1px;
+        & .overlay {
+            @include card-overlay(rgba(156, 16, 16, 0.874));
+        }
+    }
+    & .card3:hover{
+        & .overlay{
+            opacity: 1;
+        }
+        & .card-bottom-text{
+            transition: .5s ease;
+            opacity: 0;
+        }
+    }
+    & .card4{
+        & .overlay {
+            @include card-overlay(rgba(156, 16, 16, 0.874));
+        }
+    }
+    & .card4:hover{
+        & .overlay{
+            opacity: 1;
+        }
+        & .card-bottom-text{
+            transition: .5s ease;
+            opacity: 0;
+        }
+    }
+}
+
+
+/* Change styles form style on large screen 900px and above*/
+@media screen and (min-width: 900px) {
+    .card-section{
+        height: 50vmin;
+        display: flex;
+        flex-flow: row;
+    }
+}
+

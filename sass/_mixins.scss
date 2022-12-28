@@ -1,0 +1,65 @@
+// Change button propertise on hover and active
+@mixin button-bg($bg) {
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.03s ease;
+      color: #1d1d1d;
+    }
+    &:active {
+        background:darken($bg,25%);
+    }
+    &:focus{
+        background:darken($bg,20%);
+        color: $blackText;
+    }
+}
+
+// Change behaviour of buttons when switching between tabs
+@mixin tab-change($backgroundImg) {
+    background-image: (linear-gradient(to bottom, rgba(44, 42, 42, 0.262) 0%, rgba(8, 8, 8, 0.684) 100%), $backgroundImg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    & p{
+        color: whitesmoke;
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin card-overlay($backgroundColor) {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    background-color: $backgroundColor;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    & .strong-text{
+        color: white;
+    }
+    & .text {
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+        text-align: center;
+    }
+    & .card-bottom-text{
+        opacity: 1;
+        transition: .5s ease;
+        color: $blackTitleText;
+        position: absolute;
+        bottom: 0%;
+    }
+}
